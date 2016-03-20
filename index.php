@@ -1,3 +1,12 @@
+<?php
+
+$ctl = $_POST['ctl'];
+$command = "sudo python ../relay.py $ctl";
+$result = shell_exec($command);
+echo($result);
+
+?>
+
 <html>
 <head>
 <meta charset="UTF-8" />
