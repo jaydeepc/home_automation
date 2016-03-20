@@ -18,7 +18,15 @@ echo($result);
 <link rel="shortcut icon" href="../favicon.ico"> 
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300' rel='stylesheet' type='text/css' />
-
+<script>
+$('#switch_it').on('change', function(){
+    if ($(this).is(':checked')) {
+        document.getElementById("myForm").submit();
+    } else {
+//        $('form').attr('action', 'invoiceCreate.php');
+    }
+});
+</script>
 </head>
 <title>Home Automation Dashboard</title>
 <body>
@@ -27,10 +35,10 @@ echo($result);
         <h1>Control Lights</h1>
 </header>
 
-<form action="" method="POST" name="form" onchange="this.form.submit()">
+    <form action="" method="POST" name="form" id="myForm">
 <section class="main">
         <div class="switch demo2">
-            <input type="checkbox">
+            <input type="checkbox" id="switch_it">
                 <label></label>
         </div>
         <input type="hidden" name="ctl" value="1">
